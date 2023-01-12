@@ -51,12 +51,6 @@ const Header = ({ socials }: Props) => {
           transition={{ duration: 1.5 }}
           className="flex flex-row items-center text-grey-300 cursor-pointer"
         >
-          <SocialIcon
-            className="cursor-pointer"
-            network="email"
-            fgColor="gray"
-            bgColor="transparent"
-          />
           <p className="uppercase hidden md:inline-flex text-sm text-grey-400">
             Get in touch
           </p>
