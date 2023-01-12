@@ -15,6 +15,8 @@ import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
+import { AiOutlineHome } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 type Props = {
   pageInfo: PageInfo;
@@ -57,11 +59,11 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <Image
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0"
-              src=""
-              alt=""
-            />
+            <IconContext.Provider value={{ color: "black", size: "50px" }}>
+              <div>
+                <AiOutlineHome />
+              </div>
+            </IconContext.Provider>
           </div>
         </footer>
       </Link>

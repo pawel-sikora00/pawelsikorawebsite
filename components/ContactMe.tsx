@@ -1,6 +1,7 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import axios from "axios";
 
 type Inputs = {
   name: string;
@@ -12,12 +13,11 @@ type Inputs = {
 type Props = {};
 
 const ContactMe = (props: Props) => {
-  const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = async (formData) =>
-    await fetch("/api/mail", {
-      method: "post",
-      body: JSON.stringify(formData),
-    });
+  const { register, handleSubmit, reset } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    axios.post("https://eoumzbx6ov5eerv.m.pipedream.net", formData);
+    reset();
+  };
 
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
