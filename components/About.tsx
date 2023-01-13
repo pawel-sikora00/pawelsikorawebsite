@@ -18,10 +18,10 @@ const About = (props: Props) => {
       </h3>
       <motion.div
         initial={{
-          x: -300,
+          y: -200,
           opacity: 0,
         }}
-        whileInView={{ x: 0, opacity: 1 }}
+        whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         className=""
       >
