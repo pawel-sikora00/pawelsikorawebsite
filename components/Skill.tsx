@@ -5,27 +5,23 @@ import { urlFor } from "../sanity";
 
 type Props = {
   skill: Skill;
-  directionLeft?: boolean;
 };
 
-const Skill = ({ skill, directionLeft }: Props) => {
+const Skill = ({ skill }: Props) => {
   return (
     <div className="group relative flex cursor-pointer">
       <motion.img
-        initial={{ x: directionLeft ? -200 : 200 }}
-        transition={{ duration: 1 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        whileInView={{ scale: [1.0, 2.0, 1.0] }}
+        whileHover={{ scale: 1.2, rotate: 90 }}
+        whileTap={{
+          scale: 0.8,
+          rotate: -90,
+          borderRadius: "100%",
+        }}
         src={urlFor(skill?.image).url()}
-        className="rounded-full border border-gray-500 object-cover w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out"
+        className="w-14 h-14 md:w-28 md:h-28 xl:w-32 xl:h-32 filter transition duration-300 ease-in-out"
         alt=""
       />
-      <div className="absolute opacity-0 group-hover:opacity-80 transition duration-200 ease-in-out group-hover:bg-white h-24 w-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
-        <div className="flex items-center justify-center h-full">
-          <p className="text-3xl font-bold text-black opacity-100">
-            {skill.progress}%
-          </p>
-        </div>
-      </div>
     </div>
   );
 };

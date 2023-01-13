@@ -13,7 +13,7 @@ type Props = {
 const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      `Hi, My name is ${pageInfo?.name}"
+      `Hi, My name is ${pageInfo?.name}
    `,
     ],
     loop: true,
@@ -44,9 +44,6 @@ const Hero = ({ pageInfo }: Props) => {
           </Link>
           <Link href="#skills">
             <button className="heroButton">Skills</button>
-          </Link>
-          <Link href="#projects">
-            <button className="heroButton">Projects</button>
           </Link>
         </div>
       </div>
